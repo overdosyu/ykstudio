@@ -1,93 +1,131 @@
 <html>
 
-
 <head>
   <link rel="shortcut icon" href="https://lh4.googleusercontent.com/-EMBGhoHdLTo/UA4m1mKVqnI/AAAAAAAAAEs/ovhdufOn4dw/s86/yk+icon.jpg" />
   <title>YK studio</title>
+
+  <%= stylesheet_link_tag "nivo-slider" %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <%= javascript_include_tag "jquery.nivo.slider.pack" %>
+
+  <script type="text/javascript">                                         
+    $(window).load(function() {
+      $('#slider').nivoSlider({
+        effect: 'fade', // Specify sets like: 'fold,fade,sliceDown'
+        animSpeed: 700, // Slide transition speed
+        pauseTime: 5000, // How long each slide will show
+        directionNavHide: true, // Only show on hover
+        controlNav: false, // 1,2,3... navigation
+        controlNavThumbs: false, // Use thumbnails for Control Nav
+        pauseOnHover: false, // Stop animation while hovering
+        manualAdvance: false, // Force manual transitions
+        prevText: '', // Prev directionNav text
+        nextText: '', // Next directionNav text
+        randomStart: true, // Start on a random slide
+      });
+    });
+  </script>
+
   
   <style type="text/css">
-
-        #menu { 
-          font-family: "helvetica"; 
-          font-size: 9pt;
-          color: #464646; 
-          vertical-align: bottom;
-        }
-        
-    #menu span:hover {
-          color: white;
-          background-color: #464646;
-          cursor: pointer;
-    }
-
-        #photo_block {
-          background-image: url(https://lh4.googleusercontent.com/-DC5XA4sUDQg/UA4qT33y2nI/AAAAAAAAAFc/B17Iv3rLRQU/s903/background.jpg); 
-          background-repeat: no-repeat; 
-          background-position: center;
-        }
-        
-        .photo_shadow {
-      box-shadow: 8px 8px 5px #333;
+    #menu { 
+      font-family: "helvetica"; 
+      font-size: 9pt;
+      color: #464646; 
+      vertical-align: bottom;
     }
         
-        h3 {
-          font-family: "helvetica";
-          color: #464646; 
-          font-size: 9pt; 
-        }
-        
-        .news_block {
-          padding-left: 20px;
-          vertical-align: top;
-        }
+  	#menu span:hover {
+      color: white;
+      background-color: #464646;
+      cursor: pointer;
+    }
 
-        .news_block img:hover { 
-          cursor: pointer;
+    #photo_block {
+      background-image: url(https://lh4.googleusercontent.com/-DC5XA4sUDQg/UA4qT33y2nI/AAAAAAAAAFc/B17Iv3rLRQU/s903/background.jpg); 
+      background-repeat: no-repeat; 
+      background-position: center;
+    }
+        
+    h3 {
+      font-family: "helvetica";
+      color: #464646; 
+      font-size: 9pt; 
+    }
+      
+    .news_block {
+      padding-left: 20px;
+      vertical-align: top;
+    }
+
+    .news_block img:hover { 
+      cursor: pointer;
     } 
 
-        .content {
-          font-family: "arial"; 
-          color: #464646;
-          font-size: 7pt; 
-        }
+    .content {
+      font-family: "arial"; 
+      color: #464646;
+      font-size: 7pt; 
+    }
         
-        .content span {
-          color: blue;
-          text-decoration: underline;
-        }
+    .content span {
+      color: blue;
+      text-decoration: underline;
+    }
         
-        .content span:hover {
-          cursor: pointer;
-        }
+    .content span:hover {
+      cursor: pointer;
+    }
         
-        social {
-          float: right;
-        }
+    social {
+      float: right;
+    }
         
-        social img {
-      filter: gray; /* IE6-9 */ 
+    social img {
+  	  filter: gray; /* IE6-9 */ 
       -webkit-filter: grayscale(1); /* Google Chrome & Safari 6+ */ 
-        }
+    }
         
-        social img:hover { 
+    social img:hover { 
       filter: none; 
       -webkit-filter: grayscale(0); 
-          cursor: pointer;
-    } 
+      cursor: pointer;
+  	} 
         
-        footer {
-          font-family: "arial"; 
-          color: #464646;
-          font-size: 5pt; 
-        }
-
-        
+    footer {
+      font-family: "arial"; 
+      color: #464646;
+      font-size: 5pt; 
+    }
+       
+    .nivoSlider {
+	  position:relative;
+	  background:url(images/loading.gif) no-repeat 50% 50%;
+	}
+	
+	.nivoSlider img {
+	  position:absolute;
+	  top:0px;
+	  left:0px;
+	  display:none;
+	}
+	
+	.nivoSlider a {
+	  border:0;
+	  display:block;
+	}
+		
+	.slider-wrapper {
+	  display: inline-block; 
+	  height: 360px;
+	  width: auto;
+	  box-shadow: 8px 8px 5px #333;
+	}
   </style> 
         
 </head>
 
 <body>
-
 
 <table width="800px" align="center">
   <tr><td>
@@ -108,7 +146,16 @@
   </td></tr>
   
   <tr><td id="photo_block" align="center" height="400px">
-    <img src="https://lh4.googleusercontent.com/-usigaOSXM6Y/UA4qUHI_hnI/AAAAAAAAAFk/Wb_GrYRigEY/s903/linda_james_s.jpg" height="360px" class="photo_shadow" />
+	<div class="slider-wrapper">
+	    <div id="slider" class="nivoSlider">
+	      <img src="https://lh5.googleusercontent.com/-HWbW5IqWPDM/UA8LVw45ntI/AAAAAAAAAGw/oftYNDi6HK8/s540/linda_james_s.jpg" height=360px alt="" />
+	      <img src="https://lh6.googleusercontent.com/-cWO3qMSW7IM/UA8LWCA9n_I/AAAAAAAAAG0/qCpLvQAx8Yc/s540/photo_2.jpg" height=360px alt="" />
+	      <img src="https://lh4.googleusercontent.com/-_65HZWQyLfA/UA8LWfyYhoI/AAAAAAAAAG8/XgWZQ5iHaAs/s540/photo_3.jpg" height=360px alt="" />
+          <img src="https://lh3.googleusercontent.com/-g3A0QDVIyI0/UA8LWhnALvI/AAAAAAAAAHA/dmxIDw4EA9M/s540/photo_4.jpg" height=360px alt="" />
+          <img src="https://lh3.googleusercontent.com/-XJB757r5uTQ/UA8LW6FPieI/AAAAAAAAAHI/1nglTQVG8oM/s540/photo_5.jpg" height=360px alt="" />
+	    </div>
+	</div>
+
   </td></tr>
 
   <tr><td>
@@ -155,18 +202,7 @@
         <footer>&copy; 2012 YK STUDIO</footer>
   </td></tr>
 
-
-  
 </table>
 
-
-
-
 </body>
-
-
-
-
-
-
 </html>
